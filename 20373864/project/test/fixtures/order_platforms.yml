@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_order: one
+  add_time: 2022-12-01 22:18:20
+  image_directory: MyString
+  detail: MyString
+
+two:
+  transaction_order: two
+  add_time: 2022-12-01 22:18:20
+  image_directory: MyString
+  detail: MyString

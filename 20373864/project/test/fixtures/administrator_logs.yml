@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  administrator: one
+  action: MyString
+  detail: MyString
+  status: 1
+  add_time: 2022-12-01 22:19:58
+
+two:
+  administrator: two
+  action: MyString
+  detail: MyString
+  status: 1
+  add_time: 2022-12-01 22:19:58

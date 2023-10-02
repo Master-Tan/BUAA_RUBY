@@ -1,0 +1,2 @@
+module DeliverLogsHelper
+end

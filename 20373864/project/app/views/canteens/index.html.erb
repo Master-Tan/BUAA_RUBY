@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Canteens</h1>
+
+<div id="canteens">
+  <% @canteens.each do |canteen| %>
+    <%= render canteen %>
+    <p>
+      <%= link_to "Show this canteen", canteen %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New canteen", new_canteen_path %>

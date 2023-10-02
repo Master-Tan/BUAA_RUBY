@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @help_delivery_item %>
+
+<div>
+  <%= link_to "Edit this help delivery item", edit_help_delivery_item_path(@help_delivery_item) %> |
+  <%= link_to "Back to help delivery items", help_delivery_items_path %>
+
+  <%= button_to "Destroy this help delivery item", @help_delivery_item, method: :delete %>
+</div>

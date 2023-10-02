@@ -1,0 +1,258 @@
+  [1m[35m (536.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (103.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20221001055341)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221001055341"]]
+  [1m[36mTRANSACTION (424.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2022-10-26 10:05:19.451613"], ["updated_at", "2022-10-26 10:05:19.451613"]]
+  [1m[36mTRANSACTION (133.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (18.2ms)[0m  [1m[31mDELETE FROM "recipes";
+INSERT INTO "recipes" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2022-10-26 10:05:32.557053', '2022-10-26 10:05:32.557053');
+INSERT INTO "recipes" ("id", "title", "created_at", "updated_at") VALUES (298486374, 'MyString', '2022-10-26 10:05:32.557053', '2022-10-26 10:05:32.557053')[0m
+  [1m[36mTRANSACTION (449.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RecipesControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes/new" for 127.0.0.1 at 2022-10-26 18:05:34 +0800
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 250.1ms | Allocations: 3885)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 287.1ms | Allocations: 4490)
+  Rendered layout layouts/application.html.erb (Duration: 1208.1ms | Allocations: 59605)
+Completed 500 Internal Server Error in 1430ms (ActiveRecord: 0.0ms | Allocations: 61964)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+RecipesControllerTest: test_should_destroy_recipe
+-------------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+Started DELETE "/recipes/980190962" for 127.0.0.1 at 2022-10-26 18:05:36 +0800
+Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1359)
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RecipesControllerTest: test_should_create_recipe
+------------------------------------------------
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+Started POST "/recipes" for 127.0.0.1 at 2022-10-26 18:05:36 +0800
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"title"=>"MyString"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "MyString"], ["created_at", "2022-10-26 10:05:36.863616"], ["updated_at", "2022-10-26 10:05:36.863616"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/980190963
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 1187)
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+RecipesControllerTest: test_should_show_recipe
+----------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes/980190962" for 127.0.0.1 at 2022-10-26 18:05:36 +0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 4.5ms | Allocations: 194)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 43.2ms | Allocations: 1138)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 18660)
+Completed 200 OK in 70ms (Views: 67.2ms | ActiveRecord: 0.1ms | Allocations: 19179)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RecipesControllerTest: test_should_update_recipe
+------------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/recipes/980190962" for 127.0.0.1 at 2022-10-26 18:05:36 +0800
+Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{"title"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/recipes/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 707)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+RecipesControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes/980190962/edit" for 127.0.0.1 at 2022-10-26 18:05:36 +0800
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 1.0ms | Allocations: 654)
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 11.5ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 2313)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.1ms | Allocations: 2728)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+RecipesControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes" for 127.0.0.1 at 2022-10-26 18:05:36 +0800
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_recipe.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered recipes/_recipe.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered recipes/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 655)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 2066)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.1ms | Allocations: 2386)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (2.1ms)[0m  [1m[31mDELETE FROM "recipes";
+INSERT INTO "recipes" ("id", "title", "created_at", "updated_at") VALUES (980190962, 'MyString', '2022-10-26 10:12:48.288146', '2022-10-26 10:12:48.288146');
+INSERT INTO "recipes" ("id", "title", "created_at", "updated_at") VALUES (298486374, 'MyString', '2022-10-26 10:12:48.288146', '2022-10-26 10:12:48.288146')[0m
+  [1m[36mTRANSACTION (520.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RecipesControllerTest: test_should_create_recipe
+------------------------------------------------
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+Started POST "/recipes" for 127.0.0.1 at 2022-10-26 18:12:48 +0800
+Processing by RecipesController#create as HTML
+  Parameters: {"recipe"=>{"title"=>"MyString"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Create (0.9ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "MyString"], ["created_at", "2022-10-26 10:12:48.986484"], ["updated_at", "2022-10-26 10:12:48.986484"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/980190963
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms | Allocations: 1837)
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+RecipesControllerTest: test_should_show_recipe
+----------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes/980190962" for 127.0.0.1 at 2022-10-26 18:12:49 +0800
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/_recipe.html.erb (Duration: 0.7ms | Allocations: 211)
+  Rendered recipes/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1503)
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | Allocations: 26708)
+Completed 200 OK in 64ms (Views: 56.4ms | ActiveRecord: 0.1ms | Allocations: 29319)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RecipesControllerTest: test_should_update_recipe
+------------------------------------------------
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/recipes/980190962" for 127.0.0.1 at 2022-10-26 18:12:49 +0800
+Processing by RecipesController#update as HTML
+  Parameters: {"recipe"=>{"title"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/recipes/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 718)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+RecipesControllerTest: test_should_get_new
+------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes/new" for 127.0.0.1 at 2022-10-26 18:12:49 +0800
+Processing by RecipesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 15.7ms | Allocations: 3726)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 17.8ms | Allocations: 4009)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 5486)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 5839)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------
+RecipesControllerTest: test_should_destroy_recipe
+-------------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+Started DELETE "/recipes/980190962" for 127.0.0.1 at 2022-10-26 18:12:49 +0800
+Processing by RecipesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipe Destroy (0.8ms)[0m  [1m[31mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms | Allocations: 716)
+  [1m[36mRecipe Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+RecipesControllerTest: test_should_get_index
+--------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes" for 127.0.0.1 at 2022-10-26 18:12:49 +0800
+Processing by RecipesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/_recipe.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered recipes/_recipe.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered recipes/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 691)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2103)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 2472)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+RecipesControllerTest: test_should_get_edit
+-------------------------------------------
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/recipes/980190962/edit" for 127.0.0.1 at 2022-10-26 18:12:49 +0800
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_form.html.erb (Duration: 0.8ms | Allocations: 617)
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 869)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2272)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 2661)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Deliver logs</h1>
+
+<div id="deliver_logs">
+  <% @deliver_logs.each do |deliver_log| %>
+    <%= render deliver_log %>
+    <p>
+      <%= link_to "Show this deliver log", deliver_log %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New deliver log", new_deliver_log_path %>

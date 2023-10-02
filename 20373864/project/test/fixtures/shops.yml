@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password: MyString
+  phone: MyString
+  open_time: 2022-12-01 22:17:25
+  close_time: 2022-12-01 22:17:25
+  address: MyString
+  canteen: one
+
+two:
+  username: MyString
+  password: MyString
+  phone: MyString
+  open_time: 2022-12-01 22:17:25
+  close_time: 2022-12-01 22:17:25
+  address: MyString
+  canteen: two

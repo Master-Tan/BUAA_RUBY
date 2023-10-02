@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @api_session %>
+
+<div>
+  <%= link_to "Edit this session", edit_api_session_path(@api_session) %> |
+  <%= link_to "Back to sessions", api_sessions_path %>
+
+  <%= button_to "Destroy this session", @api_session, method: :delete %>
+</div>

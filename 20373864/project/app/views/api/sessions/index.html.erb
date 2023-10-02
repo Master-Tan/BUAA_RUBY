@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Sessions</h1>
+
+<div id="api_sessions">
+  <% @api_sessions.each do |api_session| %>
+    <%= render api_session %>
+    <p>
+      <%= link_to "Show this session", api_session %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New session", new_api_session_path %>

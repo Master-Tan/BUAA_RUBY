@@ -1,0 +1,2 @@
+module OrderPlatformsHelper
+end

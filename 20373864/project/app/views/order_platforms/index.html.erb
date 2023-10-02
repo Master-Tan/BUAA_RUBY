@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Order platforms</h1>
+
+<div id="order_platforms">
+  <% @order_platforms.each do |order_platform| %>
+    <%= render order_platform %>
+    <p>
+      <%= link_to "Show this order platform", order_platform %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New order platform", new_order_platform_path %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @canteen %>
+
+<div>
+  <%= link_to "Edit this canteen", edit_canteen_path(@canteen) %> |
+  <%= link_to "Back to canteens", canteens_path %>
+
+  <%= button_to "Destroy this canteen", @canteen, method: :delete %>
+</div>

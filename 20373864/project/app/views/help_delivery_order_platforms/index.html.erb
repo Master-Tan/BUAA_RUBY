@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Help delivery order platforms</h1>
+
+<div id="help_delivery_order_platforms">
+  <% @help_delivery_order_platforms.each do |help_delivery_order_platform| %>
+    <%= render help_delivery_order_platform %>
+    <p>
+      <%= link_to "Show this help delivery order platform", help_delivery_order_platform %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New help delivery order platform", new_help_delivery_order_platform_path %>

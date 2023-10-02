@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  added_time: 2022-12-01 22:18:02
+  user: one
+  shop: one
+  delivery_address: MyString
+  delivery_phone: MyString
+  order_status: MyString
+  delivery_money: 9.99
+  packing_money: 9.99
+  discount_money: 9.99
+  pay_money: 9.99
+
+two:
+  added_time: 2022-12-01 22:18:02
+  user: two
+  shop: two
+  delivery_address: MyString
+  delivery_phone: MyString
+  order_status: MyString
+  delivery_money: 9.99
+  packing_money: 9.99
+  discount_money: 9.99
+  pay_money: 9.99

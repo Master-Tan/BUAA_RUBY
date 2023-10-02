@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shop: one
+  product_name: MyString
+  retail_price: 9.99
+  favorites: 1
+  sales: 1
+  description: MyText
+  image_directory: MyString
+  product_type: MyString
+  added_time: 2022-12-01 22:17:44
+
+two:
+  shop: two
+  product_name: MyString
+  retail_price: 9.99
+  favorites: 1
+  sales: 1
+  description: MyText
+  image_directory: MyString
+  product_type: MyString
+  added_time: 2022-12-01 22:17:44

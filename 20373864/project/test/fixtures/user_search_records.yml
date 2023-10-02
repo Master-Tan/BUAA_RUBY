@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  content: MyString
+  add_time: 2022-12-01 22:19:11
+
+two:
+  user: two
+  content: MyString
+  add_time: 2022-12-01 22:19:11

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  product: one
+  quantity: 1
+  sum_price: 1
+  added_time: 2022-12-01 22:17:53
+
+two:
+  user: two
+  product: two
+  quantity: 1
+  sum_price: 1
+  added_time: 2022-12-01 22:17:53
