@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog4</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div id="banner">
+      <h1>My Blogs IV</h1>
+    </div>
+    <div id="left-panel">
+      <% if current_user %>
+        <%= current_user.username %> Logged in.<br/>
+        <%= link_to 'Logout', logout_users_path %>
+      <% else %>
+        Please <%= link_to 'Login', login_users_path %>
+      <% end %>
+    </div>
+
+    <div id="main-panel">
+      <%= yield %>
+    </div>
+
+    <div id="footer">
+      Copyright tld &copy; 2022
+    </div>
+  </body>
+</html>
